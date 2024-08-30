@@ -1,0 +1,13 @@
+version: '4.15'
+services:
+  src:
+    image: node:18.14.0
+    build: .
+    container_name: "shopper-challenge"
+    volumes:
+      - ./:/var/www/application/
+      - ./src/assets/uploads:/var/www/application/src/assets/uploads
+    working_dir: "/var/www/application/"
+    ports:
+      - "80:80"
+    command: bash -c "npm i && node ./src/app.js"
