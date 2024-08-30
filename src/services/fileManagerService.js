@@ -26,7 +26,7 @@ class FileManagerService {
 
         fs.writeFileSync(filePath, buffer);
         const port = 80;
-        const image_url = `http://localhost:${port}/api/uploads/${fileUuid}`;
+        const image_url = `http://localhost:${port}/uploads/${fileUuid}`;
 
         return {image_url , measure_value};
     }
